@@ -1,0 +1,10 @@
+{
+  "version": "0.1",
+  "opam_repo_rev": "da74d7829f794cc0af8b84981aff0c4d34114763",
+  "ocaml_version": "5.3",
+  "mirage_version": "4.9.0",
+  "targets": [
+      { "platform": "hvt", "arch": "amd64" },
+      { "platform": "hvt", "arch": "arm64" }
+  ]
+}
