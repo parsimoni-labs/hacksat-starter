@@ -11,12 +11,16 @@ accessible on-board from unikernels.
 ## Constraints on uploaded unikernels
 
 - 50 MB or less
-- For x86_64 or aarch64
+- For aarch64 or x86_64 (fallback)
 - Either a solo5 (mirage) or qemu-compatible unikernel
 - Only expects a single network interface as connection to the on-board system.
 - No attached volumes or initrd, everything must be part of the binary or come
   from the on-board capabilities.
 - Logs larger than 500kB are truncated.
+- All unikernels are killed after running more than 10 minutes.
+
+If your idea needs to lift some of these constraints, contact us
+(hacksat@parsimoni.co).
 
 ## Information about the infrastructure
 
