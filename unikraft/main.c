@@ -14,9 +14,11 @@ int main(void)
         printf("Printing result of GET 10.0.42.2/ping:\n");
         curl_easy_setopt(curl, CURLOPT_URL, "http://10.0.42.2/ping");
         res = curl_easy_perform(curl);
-        if(res != CURLE_OK)
-            fprintf(stderr, "curl_easy_perform() failed: %s\n",
+        if(res != CURLE_OK) {
+            fprintf(stderr, "curl_easy_perform() failed: %s\n\
+                    Ensure you have specified a valid IP as the runtime argument. See the docs.\n",
                     curl_easy_strerror(res));
+        }
 
         curl_easy_cleanup(curl);
     } else {
