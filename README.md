@@ -8,6 +8,29 @@ The rest of this page documents the general usage of both the
 [hacksat.dev](https://hacksat.dev) web portal and what capabilities are
 accessible on-board from unikernels.
 
+## Getting started
+
+Here's the shortest possible method to get something running on our of our
+computers:
+
+- download a pre-built "ping" image for aarch64 CPUs: either
+    [mirage](./mirage/example.arm64)
+    or
+    [unikraft](./unikraft/example.arm64)
+- go to https://hacksat.dev and create an account or sign in
+- create a project by clicking the "New project" button and give it a name
+- head to the "Images" tab
+- click the "Upload image" button and select the file you downloaded in the first step
+- once created, click on the "Deploy" button on the top right, select the image you just created, and add the following runtime arguments:
+  - for Mirage: `--ipv4 10.0.42.6/24`
+  - for Unikraft: `netdev.ip=10.0.42.6/24 --`
+- create the deployment, and then hit the Play button
+- after refreshing the page, you should see your unikernel getting assigned a computer, and the logs from its run
+
+**What do to next:** see the [mirage/](mirage/) and [unikraft/](unikraft/) directories for instructions on how to actually build these unikernels yourself, and start from this template to either exploit or build!
+
+
+
 ## Constraints on uploaded unikernels
 
 - 50 MB or less
