@@ -3,10 +3,17 @@
 - See the [mirage/](mirage/) directory for instructions on how to build and run
   a basic Mirage unikernel, and a starting template.
 - See the [unikraft/](unikraft/) directory, the same for Unikraft.
+- See [HACKING](./HACKING.md) for a description of what's explicitly in or out
+  of scope for the exploit track, and our proposed reward scheme according to
+  the severity of the discovered exploits.
 
 The rest of this page documents the general usage of both the
 [hacksat.dev](https://hacksat.dev) web portal and what capabilities are
 accessible on-board from unikernels.
+
+> [!NOTE]  
+> Feel free to ask questions by either opening issues on this repository or
+> sending an email to `hacksat@parsimoni.co`.
 
 ## Getting started
 
@@ -29,7 +36,41 @@ computers:
 
 **What do to next:** see the [mirage/](mirage/) and [unikraft/](unikraft/) directories for instructions on how to actually build these unikernels yourself, and start from this template to either exploit or build!
 
+## Submissions
 
+Submissions for either the "exploit" or "use-case" track or done by sending an email to
+[hacksat@parsimoni.co](mailto:hacksat@parsimoni.c).
+
+### Exploit track
+
+> [!IMPORTANT]  
+> Verify that your exploit is eligible by reading the scope rules in
+> [HACKING](./HACKING.md).
+
+Send as a brief description of your exploit, with as much detail as possible,
+including if relevant:
+- a detailed explanation of it
+- a proof-of-concept unikernel (or artifact) reproducing the exploit
+- the on-board computer it applies to, if it is specific to one
+- the relevant times an attack was performed, so the logs can be checked
+- any other detail you deem relevant so we can check the exploit is real and
+    (ideally) reproducible.
+
+Whether rewarded or not, all exploits in scope that are submitted will be
+transparently published (and credited to their authors) in the final report.
+
+### Use-case track
+
+Send us an explanation of your idea for edge computing in space, and describe:
+- its applicability (how broadly useful would your application be)
+- your experiments building it as a unikernel (provide examples, compiled
+    unikernels or source code if you can or want). Note that this can be at a
+    proof-of-concept stage.
+- its general resource usage:
+  - memory and CPU requirements
+  - how it interacts (or would interact) with the satellite capabilities:
+      storage, sensors, networking, etc.
+- your interest in demonstrating this idea in a live mission
 
 ## Constraints on uploaded unikernels
 
@@ -42,8 +83,10 @@ computers:
 - Logs larger than 500kB are truncated.
 - All unikernels are killed after running more than 10 minutes.
 
-If your idea needs to lift some of these constraints, contact us
-(hacksat@parsimoni.co).
+
+> [!NOTE]  
+> If your idea needs to lift some of these constraints, contact us
+> at `hacksat@parsimoni.co`
 
 ## Information about the infrastructure
 
