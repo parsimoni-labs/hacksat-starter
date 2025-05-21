@@ -1,0 +1,8 @@
+{
+  "version": "0.2",
+  "kind": "unikraft",
+  "targets": [
+      { "platform": "qemu", "arch": "amd64" },
+      { "platform": "qemu", "arch": "arm64" }
+  ]
+}
