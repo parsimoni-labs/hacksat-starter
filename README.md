@@ -153,6 +153,9 @@ This means to indirect with the satellite, unikernels need to embed a simple
 HTTP client implementation. Examples in the `mirage` and `unikraft` directories
 show how to do this.
 
+The exact binaries for the unikernel that provides these capabilities along some
+information about the stack used, can be found in [this directory](./onboard-software/service-provider).
+
 ### Ping
 
 - **Endpoint:** `GET /ping`
