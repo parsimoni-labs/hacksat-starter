@@ -14,6 +14,16 @@
 If you just want to test it, this repository contains a pre-built unikernel
 (`example.x86` and `example.arm64`).
 
+## Building with docker
+
+You can build this project with docker by running the following commands:
+```bash
+$ docker build -t kraft .
+$ docker run -it -v "$PWD:/mnt/build" kraft build --plat qemu --arch arm64 
+```
+
+The build results can be found in `.unikraft/build/`.
+
 ## Running
 
 - You can upload it on `hacksat.dev` as an *image*
