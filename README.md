@@ -156,6 +156,10 @@ show how to do this.
 The exact binaries for the unikernel that provides these capabilities along some
 information about the stack used, can be found in [this directory](./onboard-software/service-provider).
 
+Note that all authenticated endpoints use an API key that can be generated in
+the "Key" tab of the web interface. That key must then be embedded in the
+unikernel or passed as a CLI argument (see examples).
+
 ### Ping
 
 - **Endpoint:** `GET /ping`
@@ -164,6 +168,47 @@ information about the stack used, can be found in [this directory](./onboard-sof
 
 This most simple capability is used to check that your unikernel is correctly
 interfacing with the on-board system, and should simply return pong.
+
+**The capabilities below are not yet deployed on the production computers.**
+
+### Downlink
+
+- **Endpoint:** `POST /downlink/:filename`
+- **Authorization:** `Bearer API_KEY`
+- **Body**: raw data to downlink
+- **Response:** 201 Created on success
+
+This endpoint is used to downlink arbitrary data (within a 5 Mb limit) to the
+ground station, making it available as the given filename. The file will appear
+in the web interface and be fetched from the on-board computer on demand, for
+download.
+
+### Orbital data
+
+- **Endpoint:** `GET /orbital-parameters`
+- no parameters or data
+- **Response:** json-encoded data
+
+Get current position, orientation, velocity and orbital parameters of the
+simulated satellite (details to come on the data format).
+
+### Sensor data
+
+- **Endpoint:** `GET /sensors/:sensor-name`
+- no parameters or data
+- **Response:** json-encoded data
+
+Get latest acquisition of a given sensor (details to come on available sensors
+and data format).
+
+### Restart
+
+- **Endpoint:** `POST /restart`
+- **Authorization:** `Bearer API_KEY`, admin account
+- **Response:** 200 on success, 403 on failure
+
+Restart the whole computer. This is a privileged endpoint that should only be
+accessible by admin accounts.
 
 ### More to come
 
