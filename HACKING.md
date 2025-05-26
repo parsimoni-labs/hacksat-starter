@@ -49,8 +49,30 @@ cash bounties, depending on their severity, novelty, and up to 10,000€, accord
 following guidelines (subject to the discretion of Parsimoni, and until the prize
 pool is empty).
 
-*details to come*
-
 Note that if the same vulnerability is independently discovered and submitted by
 multiple entities, only the **first** submission will be rewarded (but all
 authors will be credited).
+
+All rewards will be determined at the end of the submission period, so they can
+be scaled according to the total number of submissions.
+
+### Sandbox escape
+
+Highest severity (~5000€). Reward will be scaled according to the complexity and novelty
+of the approach (see above).
+
+### Privilege escalation
+
+High severity (~2000€). Severity will depend on the exploitability of the
+escalation and its target (web interface, provider unikernel).
+
+### Resource exhaustion
+
+Low to medium severity (~200€+). Severity will depend on the consequences of the
+denial of service: punctual restarts, long-term inavailability, influence on
+other guests, etc. 
+
+### Other
+
+Subject to discussion with the authors.
+
