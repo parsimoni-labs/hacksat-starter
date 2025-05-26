@@ -2,6 +2,14 @@
 
 ## Building
 
+### Automatically with petrel
+
+- Retrieve and install the [`petrel` CLI](../tools)
+- Edit `petrel.json` as desired and run `petrel build`
+- The resulting unikernels are in `_petrel/TARGET_NAME/image`
+
+### Manually with docker
+
 - Run:
   ```bash
   $ docker build -t builder .
