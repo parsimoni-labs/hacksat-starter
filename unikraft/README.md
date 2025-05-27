@@ -2,7 +2,7 @@
 
 ## Building
 
-## With docker
+### With docker
 
 You can build this project with docker by running the following commands:
 ```bash
