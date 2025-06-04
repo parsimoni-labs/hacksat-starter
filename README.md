@@ -187,19 +187,28 @@ download.
 
 - **Endpoint:** `GET /orbital-parameters`
 - no parameters or data
-- **Response:** json-encoded data
+- **Response:** CSV data
 
-Get current position, orientation, velocity and orbital parameters of the
-simulated satellite (details to come on the data format).
+The returned CSV data contains the current reading of the orbital parameters.
+The CSV contains a header with a list of parameter names.
+
+This simulated orbital data is based on the OPS-SAT 1 telemetry dataset. For
+more details on the dataset and the kind of analysis you can perform with it
+see: <https://opssat.esa.int/ops-sat-1/reentry_dataset/>.
 
 ### Sensor data
 
-- **Endpoint:** `GET /sensors/:sensor-name`
+- **Endpoint:** `GET /sensors/imaging-01`
 - no parameters or data
-- **Response:** json-encoded data
+- **Response:** TIF image data
 
-Get latest acquisition of a given sensor (details to come on available sensors
-and data format).
+Produces an image file of a simulated onboard imaging sensor. Each image
+measures 256x256 pixels and represent a distinct terrain type.
+
+This dataset can be used to test terrain classification models.
+
+The images are part of the UC Merced Land dataset. For more details see:
+<http://weegee.vision.ucmerced.edu/datasets/landuse.html>.
 
 ### Restart
 
