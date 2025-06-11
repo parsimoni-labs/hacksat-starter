@@ -169,20 +169,6 @@ unikernel or passed as a CLI argument (see examples).
 This most simple capability is used to check that your unikernel is correctly
 interfacing with the on-board system, and should simply return pong.
 
-**The capabilities below are not yet deployed on the production computers.**
-
-### Downlink
-
-- **Endpoint:** `POST /downlink/:filename`
-- **Authorization:** `Bearer API_KEY`
-- **Body**: raw data to downlink
-- **Response:** 201 Created on success
-
-This endpoint is used to downlink arbitrary data (within a 5 Mb limit) to the
-ground station, making it available as the given filename. The file will appear
-in the web interface and be fetched from the on-board computer on demand, for
-download.
-
 ### Orbital data
 
 - **Endpoint:** `GET /orbital-parameters`
@@ -210,6 +196,21 @@ This dataset can be used to test terrain classification models.
 The images are part of the UC Merced Land dataset. For more details see:
 <http://weegee.vision.ucmerced.edu/datasets/landuse.html>.
 
+**The capabilities below are not yet deployed on the production computers.**
+
+### Downlink
+
+- **Endpoint:** `POST /downlink/:filename`
+- **Authorization:** `Bearer API_KEY`
+- **Body**: raw data to downlink
+- **Response:** 201 Created on success
+
+This endpoint is used to downlink arbitrary data (within a 5 Mb limit) to the
+ground station, making it available as the given filename. The file will appear
+in the web interface and be fetched from the on-board computer on demand, for
+download.
+
+
 ### Restart
 
 - **Endpoint:** `POST /restart`
@@ -218,8 +219,3 @@ The images are part of the UC Merced Land dataset. For more details see:
 
 Restart the whole computer. This is a privileged endpoint that should only be
 accessible by admin accounts.
-
-### More to come
-
-This list will be gradually expanded as the hackathon progresses through the
-month.
