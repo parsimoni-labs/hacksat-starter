@@ -13,6 +13,17 @@ following (open-source) components:
 
 ## Running
 
-`solo5-hvt --mem 512 --net:service=TAP_NAME -- -l debug`
+**Create a tap interface**
 
-where `TAP_NAME` is a Linux tap device bridged to client unikernels
+```
+$ ip tuntap add tap100 mode tap
+$ ip addr add 10.0.42.1/24 dev tap100
+$ ip link set dev tap100 up
+```
+
+**Run the unikernel**
+
+```
+$ solo5-hvt --mem=512 --net:service=tap100 UNIKERNEL_FILE`
+$ curl http://10.0.42.2/ping
+```
