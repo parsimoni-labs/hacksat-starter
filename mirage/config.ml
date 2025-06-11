@@ -2,13 +2,7 @@
 open Mirage
 
 let client =
-  let packages = [
-      package ~pin:"git+https://github.com/Firobe/ocaml-cohttp.git#fix-mirage-client" "cohttp-mirage";
-      package ~pin:"git+https://github.com/Firobe/ocaml-cohttp.git#fix-mirage-client" "cohttp-lwt";
-      package ~pin:"git+https://github.com/Firobe/ocaml-cohttp.git#fix-mirage-client" "cohttp";
-      package ~pin:"git+https://github.com/Firobe/ocaml-cohttp.git#fix-mirage-client" "http";
-      package "duration"
-  ] in
+  let packages = [ package "duration" ] in
   main ~packages "Unikernel.Client" (http_client @-> job)
 
 let () =

@@ -20,7 +20,7 @@ accessible on-board from unikernels.
 Here's the shortest possible method to get something running on our of our
 computers:
 
-- download a pre-built "ping" image for aarch64 CPUs: either
+- download a pre-built client image for aarch64 CPUs: either
     [mirage](./mirage/example.arm64)
     or
     [unikraft](./unikraft/example.arm64)

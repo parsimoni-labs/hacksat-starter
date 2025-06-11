@@ -1,6 +1,6 @@
 {
   "version": "0.1",
-  "opam_repo_rev": "da74d7829f794cc0af8b84981aff0c4d34114763",
+  "opam_repo_rev": "5d06e882dd4254efed3ed68bbc9e77273e592c83",
   "ocaml_version": "5.3",
   "mirage_version": "4.9.0",
   "targets": [
