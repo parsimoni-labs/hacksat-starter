@@ -196,12 +196,62 @@ This dataset can be used to test terrain classification models.
 The images are part of the UC Merced Land dataset. For more details see:
 <http://weegee.vision.ucmerced.edu/datasets/landuse.html>.
 
+### Authorized access
+
+- **Endpoint:** `GET /authorized`
+- **Authorization:** `Bearer ${API_KEY}`
+- **Response:** Plain text: confirmation of access level
+
+Unlike some other endpoints, `/authorized` requires a valid API key to be passed
+in the request headers. This simulates access to satellite manager resources
+that may be restricted to selected users or apps.
+
+To make an authorized request add the following header:
+
+```
+Authorization: Bearer ${API_KEY}
+```
+
+A valid API key can be generated at <https://hacksat.dev> in the "Keys" section
+of any project. The generated key is encoded in conformance with the [JWT
+specification](https://datatracker.ietf.org/doc/html/rfc7519).
+
+API keys have a restrictive set of permissions and can only operate within the
+claims that make up the key.
+
+When an API key request is made to the `/authorized` endpoint, you should see
+the following message in the output:
+
+```
+Regular rights confirmed.
+```
+
+> **TIP**: Paste the content of an API key at <https://jwt.io> to inspect the
+> claims included in the key.
+
+#### Admin claim
+
+There is a special claim which is not include in the API key: the admin claim.
+This claim gives full access to the manager deployment and can be used to
+access data outside of a given project. The claim's field name is `"admin"` and
+it must be set to `true` in the key's payload to be valid.
+
+We encourage you to break in into the `/authorized` endpoint and gain admin
+access level.
+
+When an admin request is made to the `/authorized` endpoint, you should see the
+following message in the output:
+
+```
+Admin rights confirmed. Congratulations!
+```
+
 **The capabilities below are not yet deployed on the production computers.**
 
 ### Downlink
 
 - **Endpoint:** `POST /downlink/:filename`
-- **Authorization:** `Bearer API_KEY`
+- **Authorization:** `Bearer ${API_KEY}`
 - **Body**: raw data to downlink
 - **Response:** 201 Created on success
 
@@ -214,7 +264,7 @@ download.
 ### Restart
 
 - **Endpoint:** `POST /restart`
-- **Authorization:** `Bearer API_KEY`, admin account
+- **Authorization:** `Bearer ${API_KEY}`, admin account
 - **Response:** 200 on success, 403 on failure
 
 Restart the whole computer. This is a privileged endpoint that should only be
