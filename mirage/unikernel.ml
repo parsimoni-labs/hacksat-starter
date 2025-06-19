@@ -24,5 +24,6 @@ module Client (Client : Cohttp_lwt.S.Client) = struct
     let* () = get ctx "http://10.0.42.2/ping" in
     let* () = get ctx "http://10.0.42.2/orbital-parameters" in
     let* () = get ctx "http://10.0.42.2/sensors/imaging-01" in
+    let* () = get ctx "http://10.0.42.2/sensors/authorized" in
     Lwt.return_unit
 end

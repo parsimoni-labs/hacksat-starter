@@ -68,6 +68,8 @@ int main(void)
         print_get(curl, "http://10.0.42.2/orbital-parameters");
         printf("\n- Printing result of GET 10.0.42.2/sensors/imaging-01:\n");
         print_get(curl, "http://10.0.42.2/sensors/imaging-01");
+        printf("\n- Printing result of GET 10.0.42.2/authorized:\n");
+        print_get(curl, "http://10.0.42.2/sensors/authorized");
         curl_easy_cleanup(curl);
     } else {
         printf("Curl initialization failed\n");
